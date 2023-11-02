@@ -27,7 +27,12 @@ void tokeniseRecord(const char *input, const char *delimiter, char *date, char *
 
     free(inputCopy);
 
-    int main() {
+int main() {
+    FILE *file = fopen("FitnessData_2023.csv", "r");
+    if (file == NULL) {
+        perror("");
+        return 1;
+    }
         
 
 }
