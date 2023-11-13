@@ -27,12 +27,18 @@ void tokeniseRecord(const char *input, const char *delimiter, char *date, char *
 
     free(inputCopy);
 
-int main() {
-    FILE *file = fopen("FitnessData_2023.csv", "r");
-    if (file == NULL) {
-        perror("");
-        return 1;
+int main () {
+    FILE *fp;
+
+    fp = fopen("FitnessData_2023.csv", "r");
+    if (fp = NULL) {
+        printf("File Not Found");
     }
-        
+
+    fgets(FITNESS_DATA, 1000, fp);
+
+    fclose (fp);
+
+}
 
 }
