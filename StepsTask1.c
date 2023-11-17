@@ -32,35 +32,25 @@ int main () {
 
     FILE *fp;
 
-    fp = fopen("FitnessData_2023.csv", "r");
+    fp = fopen("/workspaces/bootcamp/FitnessData_2023.csv", "r");
     if (fp = NULL) {
         printf("Error");
         return 1;
     }
-    FITNESS_DATA lines [1000];
-     int read = 0;
-     int records = 0;
-    do {
-        read = fscanf(fp,"%c[],%c[],%d", lines[records].date, lines[records].time, &lines[records].steps);
-    
-        if (read == 4) {
-            records++;
-        }
 
-        else {
-            printf("Error\n");
-            return 1;
-        }
+    FITNESS_DATA records[100];
+    int read = 0;
+    int entries = 0;
+    do {
+        read = fscanf(fp,"%c[11], %c[6], %d\n", records[entries].date, records[entries].time, &records[entries].steps);
     } while (!feof(fp));
-    
 
     fclose (fp);
 
-    printf("Number of records in file: %d\n", records);
+    printf("Number of records in file: %d\n", entries);
 
-    for (int i = 0; i < 3; i++) {
-        printf("%c %c %d\n", lines[i].date, lines[i].time, lines[i].steps);
+    for (int i=0; i<3; i++) {
+        printf("%c[11] %c[6] %d\n", records[i].date, records[i].time, records[i].steps);
     }
 
 }
-
