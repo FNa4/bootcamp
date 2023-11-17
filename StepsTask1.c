@@ -41,9 +41,9 @@ int main () {
     FITNESS_DATA records[100];
     int read = 0;
     int entries = 0;
-    do {
+    while (!feof(fp)) {
         read = fscanf(fp,"%c[11], %c[6], %d\n", records[entries].date, records[entries].time, &records[entries].steps);
-    } while (!feof(fp));
+    }
 
     fclose (fp);
 
