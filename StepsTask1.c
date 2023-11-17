@@ -50,7 +50,7 @@ int main () {
     printf("Number of records in file: %d\n", entries);
 
     for (int i=0; i<3; i++) {
-        printf("%c[11] %c[6] %d\n", records[i].date, records[i].time, records[i].steps);
+        printf("%c %c %d\n", records[i].date, records[i].time, records[i].steps);
     }
 
 }
